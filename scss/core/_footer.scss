@@ -1,0 +1,36 @@
+.footer {
+  --font-footer: 12px;
+  background-color: $black-cl;
+  height: 55px;
+  position: relative;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mid(false);
+  }
+  &__brand {
+    font-size: var(--font-footer);
+    font-family: pr;
+    letter-spacing: 0.05em;
+    color: $gray-footer;
+  }
+  &__btt {
+    a {
+      font-size: var(--font-footer);
+      font-family: pr;
+      letter-spacing: 0.05em;
+      color: $gray-footer;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+  @include xs {
+    --font-footer: 14px;
+    height: 130px;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

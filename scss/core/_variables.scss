@@ -1,0 +1,39 @@
+// Primary Color
+$white-cl: #fff;
+$black-cl: #000;
+$white-btn: #ffffff;
+$yellow: #bea67c;
+$yellow-icon: #bfac8a;
+$yellow-hover: #a28044;
+
+// Global text color
+$text-cl: #010101;
+$gray-cl: #464646;
+$black-dark: #000000;
+$gray-line: #555555;
+$gray-border: #e6e6e6;
+$gray-footer: #b0b0b0;
+$gray-dots: #b0b0b0;
+// Font
+// Boxed layout
+$max-width: 1920px;
+$container-max-width: $max-width;
+$container-width: 1010px;
+//
+$t: 0.3s;
+$cubic: cubic-bezier(0.61, 0.22, 0.23, 1);
+/*GRID - media queries breakpoints*/
+$xxs-min: 576px; // CÓ THỂ TÙY CHỈNH
+$xs-min: 768px; // KHÔNG THAY ĐỔI
+$sm-min: 992px; // KHÔNG THAY ĐỔI
+$md-min: 1200px; // KHÔNG THAY ĐỔI
+$lg-min: 1600px; // CÓ THỂ TÙY CHỈNH
+
+$xxs-max: ($xxs-min - 1); // Small Mobile
+$xs-max: ($xs-min - 1); // Mobile
+$sm-max: ($sm-min - 1); // Tablet
+$md-max: ($md-min - 1); // Desktop
+$lg-max: ($lg-min - 1); // Large Desktop
+:root {
+  --height-header: 80px;
+}
