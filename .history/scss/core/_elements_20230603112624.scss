@@ -1,0 +1,228 @@
+.btn-primary {
+  --font-14: 14px;
+  --gap-btn: 15px;
+  display: inline-flex;
+  width: max-content;
+  padding: 17px 46.5px;
+  font-size: var(--font-btn);
+  font-family: pb;
+  letter-spacing: 0.2em;
+  border: 1px solid $white-btn;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $white-cl;
+  background: transparent;
+  gap: var(--gap-btn);
+  align-items: center;
+  @include transition($t);
+  i {
+    display: block;
+    position: relative;
+    right: 0;
+    @include transition($t);
+  }
+  &:hover {
+    background-color: $yellow;
+    @include transition($t);
+    &.btn__slider {
+      i {
+        margin-left: 20px;
+        right: -10px;
+        @include transition($t);
+      }
+    }
+  }
+  // @include xs {
+  //   padding: 15px 45px;
+  //   --font-btn: 22px;
+  //   --gap-btn: 20px;
+  // }
+  // @include xxs {
+  //   padding: 10px 25px;
+  //   --font-btn: 22px;
+  //   --gap-btn: 20px;
+  // }
+}
+.btn__trans {
+  width: max-content;
+  border: 1px solid $white-btn;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15.5px 17px;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: $yellow;
+    position: absolute;
+
+    z-index: 1;
+  }
+  &.--prev {
+    &::after {
+      right: -100%;
+      @include transition(0.4s $cubic);
+    }
+  }
+  &.--after {
+    &::after {
+      left: -100%;
+      @include transition(0.4s $cubic);
+    }
+  }
+  .icon {
+    transform: rotate(-180deg);
+    z-index: 10;
+    position: relative;
+  }
+  &:hover {
+    &.--prev {
+      &::after {
+        right: 0;
+        @include transition(0.4s $cubic);
+      }
+    }
+    &.--after {
+      &::after {
+        left: 0;
+        @include transition(0.4s $cubic);
+      }
+    }
+  }
+  @include xs {
+    padding: 20px 40px;
+  }
+  @include xxs {
+    padding: 12px 13px;
+  }
+}
+.text {
+  max-width: 450px;
+  margin-bottom: 47px;
+  .heading {
+    font-family: pb;
+    font-size: 40px;
+    letter-spacing: 0.07em;
+    color: $white-cl;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  .desc {
+    font-family: pr;
+    font-size: 16px;
+    letter-spacing: 0.025em;
+    line-height: 22px;
+    color: $white-cl;
+    margin-top: 9px;
+  }
+}
+.textbox {
+  --padding-left-element: -98px;
+  max-width: 395px;
+  padding-top: 15px;
+  .heading {
+    font-family: pb;
+    font-size: 40px;
+    letter-spacing: 0.07em;
+    color: $text-cl;
+    line-height: normal;
+    text-transform: uppercase;
+    position: relative;
+    &.--yellow {
+      color: $yellow;
+      &::before {
+        display: none;
+      }
+    }
+    &:before {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: $gray-line;
+      position: absolute;
+      top: 50%;
+      left: var(--padding-left-element);
+      @include xs {
+        display: none;
+      }
+      @include sm {
+        width: 60px;
+        --padding-left-element: -80px;
+      }
+    }
+  }
+  .desc {
+    font-family: pr;
+    font-size: 16px;
+    letter-spacing: 0.025em;
+    line-height: 22px;
+    color: $gray-cl;
+    margin: 8px 0 30px;
+  }
+  .learn-more {
+    display: inline-flex;
+    align-items: center;
+    font-family: pb;
+    font-size: var(--font-14);
+    line-height: normal;
+    letter-spacing: 0.2em;
+    color: $black-dark;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: relative;
+    @include transition($t);
+    &::after {
+      content: "";
+      width: 35px;
+      height: 2px;
+      background: $yellow;
+      display: block;
+      bottom: -4px;
+      position: absolute;
+      @include transition($t);
+      @include xs {
+        width: 45px;
+      }
+    }
+    &:hover {
+      color: $yellow;
+      &::after {
+        background: $black-cl;
+      }
+    }
+    .icon {
+      margin-left: 5px;
+    }
+  }
+  @include xs {
+    --font-14: 17px;
+    padding: 40px 0 70px;
+    .learn-more {
+      letter-spacing: 0.05em;
+    }
+  }
+}
+.btn__news {
+  display: inline-flex;
+  margin-bottom: 40px;
+  width: max-content;
+  padding: 10px 20px;
+  background-color: $gray-border;
+  color: $black-cl;
+  font-size: 17px;
+  @include transition($t);
+  &:hover {
+    color: $white-cl;
+    background: $yellow;
+    @include transition($t);
+  }
+  &.active {
+    background: $yellow;
+    color: $white-btn;
+    @include transition($t);
+  }
+}
