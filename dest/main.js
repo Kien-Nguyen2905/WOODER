@@ -250,10 +250,8 @@ progressbar();
 function handleSlider() {
   var elem = document.querySelector(".slider__wrap");
   var flktySlider = new Flickity(elem, {
-    // options
     cellAlign: "left",
     contain: true,
-    draggable: ">1",
     prevNextButtons: false,
     wrapAround: true,
     on: {
@@ -266,15 +264,15 @@ function handleSlider() {
     },
   });
   // BTN
-  let btnPrev = document.querySelector(".btn__trans.--after");
-  let btnNext = document.querySelector(".btn__trans.--prev");
+  let btnPrev = document.querySelector(".btn__trans.--prev");
+  let btnNext = document.querySelector(".btn__trans.--after");
   btnPrev.addEventListener("click", function (e) {
     e.preventDefault();
-    flktySlider.previous(true);
+    flktySlider.next(true);
   });
   btnNext.addEventListener("click", function (e) {
     e.preventDefault();
-    flktySlider.next(true);
+    flktySlider.previous(true);
   });
   // Dots
   function dotsSlider() {
